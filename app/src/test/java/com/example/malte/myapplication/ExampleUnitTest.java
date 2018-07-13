@@ -14,4 +14,13 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void maltesTest(){
+        // Start value F
+        int f = 65;
+        double c = 65 * 0.1;
+
+        //
+    }
 }

@@ -33,6 +33,7 @@ public class FragmentTemperature extends Fragment {
     Button btnConvert;
     TextView lblFormula;
     TextView lblExample;
+    TextView lblMessage;
 
     @Nullable
     @Override
@@ -50,6 +51,7 @@ public class FragmentTemperature extends Fragment {
         btnConvert = view.findViewById(R.id.btnConvert);
         lblFormula = view.findViewById(R.id.textFormula);
         lblExample = view.findViewById(R.id.textExample);
+        lblMessage = view.findViewById(R.id.labelMessage);
 
         // Set temperature scales.
         setScaleToSpinner(spinnerFrom);
@@ -57,10 +59,20 @@ public class FragmentTemperature extends Fragment {
 
         btnConvert.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(txtFrom.getText().toString().trim().equals("") ||
-                        (spinnerFrom.getSelectedItem() == spinnerTo.getSelectedItem())){
+                lblMessage.setText("");
+                lblFormula.setText("");
+                lblExample.setText("");
+                txtTo.setText("");
+
+                if (txtFrom.getText().toString().trim().equals("")) {
+                    lblMessage.setText("Please fill in From value.");
                     return;
                 }
+                if (spinnerFrom.getSelectedItem() == spinnerTo.getSelectedItem()) {
+                    lblMessage.setText("From and To Scale are the same.");
+                    return;
+                }
+
                 convert();
             }
         });

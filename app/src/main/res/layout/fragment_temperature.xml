@@ -7,10 +7,19 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp">
 
+    <TextView
+        android:id="@+id/labelFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/editTextFromValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/labelFrom"
         android:gravity="right"
         android:width="100dp"
         android:ems="10"
@@ -24,24 +33,33 @@
         android:layout_toEndOf="@+id/editTextFromValue"
         android:layout_toRightOf="@+id/editTextFromValue" />
 
+    <TextView
+        android:id="@+id/labelTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextFromValue"
+        android:text="To"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/editTextToValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextFromValue"
+        android:layout_below="@+id/labelTo"
         android:gravity="right"
         android:width="100dp"
-        android:editable="false"
         android:ems="10"
+        android:inputType="numberDecimal"
         android:enabled="false" />
 
     <Spinner
         android:id="@+id/spinnerToScale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextFromValue"
-        android:layout_toEndOf="@+id/editTextFromValue"
-        android:layout_toRightOf="@+id/editTextFromValue" />
+        android:layout_alignTop="@+id/editTextToValue"
+        android:layout_toEndOf="@+id/editTextToValue"
+        android:layout_toRightOf="@+id/editTextToValue" />
 
     <Button
         android:id="@+id/btnConvert"
@@ -51,12 +69,22 @@
         android:text="Convert" />
 
     <TextView
-        android:id="@+id/labelFormula"
+        android:id="@+id/labelMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnConvert"
+        android:text=""
+        android:paddingTop="6dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/labelFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelMessage"
         android:text="Formula"
-        android:paddingTop="16dp"
+        android:paddingTop="10dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold" />
 

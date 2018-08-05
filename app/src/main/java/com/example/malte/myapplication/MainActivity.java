@@ -83,14 +83,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_temperature) {
+        if (id == R.id.nav_temperature) {
             fragment = new FragmentTemperature();
-        } else if (id == R.id.nav_slideshow) {
-            fragment = new FragmentTemplate();
-        } else if (id == R.id.nav_manage) {
-            fragment = new FragmentTemplate();
         } else if (id == R.id.nav_share) {
             fragment = new FragmentTemplate();
         } else if (id == R.id.nav_send) {

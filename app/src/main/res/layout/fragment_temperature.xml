@@ -1,13 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp">
 
-    <TextView
-        android:id="@+id/textView01"
+    <EditText
+        android:id="@+id/editTextFromValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:text="Test" />
+        android:gravity="right"
+        android:width="100dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/spinnerFromScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editTextFromValue"
+        android:layout_toEndOf="@+id/editTextFromValue"
+        android:layout_toRightOf="@+id/editTextFromValue" />
+
+    <EditText
+        android:id="@+id/editTextToValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextFromValue"
+        android:gravity="right"
+        android:width="100dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false" />
+
+    <Spinner
+        android:id="@+id/spinnerToScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextFromValue"
+        android:layout_toEndOf="@+id/editTextFromValue"
+        android:layout_toRightOf="@+id/editTextFromValue" />
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextToValue"
+        android:text="Convert" />
+
+    <TextView
+        android:id="@+id/labelFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnConvert"
+        android:text="Formula"
+        android:paddingTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelFormula"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/labelExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textFormula"
+        android:paddingTop="16dp"
+        android:text="Calculation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelExample"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
 </RelativeLayout>

@@ -12,11 +12,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import se.martinstengard.conversions.temperature.*;
 
@@ -25,6 +24,7 @@ import se.martinstengard.conversions.temperature.*;
  */
 
 public class FragmentTemperature extends Fragment {
+    AdView mAdView;
     View view;
     EditText txtFrom;
     EditText txtTo;
@@ -43,6 +43,11 @@ public class FragmentTemperature extends Fragment {
         view = inflater.inflate(R.layout.fragment_temperature,
                 container,
                 false);
+
+        // Mobil ads.
+        mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         txtFrom = view.findViewById(R.id.editTextFromValue);
         txtTo = view.findViewById(R.id.editTextToValue);
